@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { authActions } from '../slices/auth';
+import { AUTH_LOGIN } from '../actions/authActions';
 import classes from './Auth.module.css';
 
 const Auth = () => {
@@ -7,7 +7,7 @@ const Auth = () => {
 
   const handleLogin = event => {
     event.preventDefault();
-    dispatch(authActions.login());
+    dispatch({ type: AUTH_LOGIN });
   };
 
   return (

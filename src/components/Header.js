@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { authActions } from '../slices/auth';
+import { AUTH_LOGOUT } from '../actions/authActions';
 import classes from './Header.module.css';
 
 const Header = () => {
@@ -7,7 +7,7 @@ const Header = () => {
   const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
 
   const handleLogout = () => {
-    dispatch(authActions.logout());
+    dispatch({ type: AUTH_LOGOUT });
   };
 
   return (
